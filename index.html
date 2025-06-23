@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie Finder Chatbot</title>
+  <link rel="shortcut icon" href="favicon.png" type="image/png">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 flex flex-col items-center justify-center p-2 sm:p-4">
+  
+  <div class="w-full max-w-sm sm:max-w-2xl lg:max-w-4xl mx-auto">
+    <h1 class="text-2xl sm:text-4xl lg:text-6xl font-bold text-white text-center mb-4 sm:mb-8 bg-gradient-to-r from-pink-400 via-purple-400 to-indigo-400 bg-clip-text text-transparent drop-shadow-lg">
+      Movie Finder Chatbot
+    </h1>
+
+    <div id="chatbox" class="bg-white/10 backdrop-blur-lg rounded-xl sm:rounded-2xl shadow-2xl border border-white/20 p-3 sm:p-6 h-64 sm:h-96 lg:h-[500px] overflow-y-auto scrollbar-thin scrollbar-thumb-purple-400 scrollbar-track-transparent flex flex-col">
+      <div id="initial" class="text-gray-300 text-center mt-8 sm:mt-20">
+        <svg class="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-4 opacity-50" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z" clip-rule="evenodd"></path>
+        </svg>
+        <p class="text-sm sm:text-lg">Type in a genre to find your perfect movie!</p>
+      </div>
+    </div>
+
+    <div class="mt-4 sm:mt-6 flex flex-col sm:flex-row items-stretch sm:items-center space-y-3 sm:space-y-0 sm:space-x-4">
+      <input id="userinput" type="text" placeholder="Enter a genre ..." class="w-full sm:flex-1 px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg sm:rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent text-sm sm:text-base">
+      <button class="w-full sm:w-auto px-4 sm:px-6 py-2.5 sm:py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold rounded-lg sm:rounded-xl hover:from-purple-600 hover:to-pink-600 transition-all duration-200 transform hover:scale-105 shadow-lg text-sm sm:text-base">
+        Send
+      </button>
+    </div>
+  </div>
+
+  <script src="js/model/MovieModel.js"></script>
+  <script src="js/view/ChatView.js"></script>
+  <script src="js/controller/ChatController.js"></script>
+  
+</body>
+
+</html>
