@@ -1,5 +1,8 @@
 async function handleUserInput() {
   const genre = getUserInput();
+  clearUserInput();
+
+  if (genre.length == 0) return;
 
   if (genre == "/help") {
     handleHelp();
@@ -7,7 +10,6 @@ async function handleUserInput() {
   }
 
   displayUserMsg(genre);
-  clearUserInput();
 
   showLoadingMsg();
   const result = await fetchMovieData(genre);

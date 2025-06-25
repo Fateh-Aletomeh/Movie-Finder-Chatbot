@@ -27,11 +27,12 @@ function removeInitialText() {
 }
 
 
-function addMsgToChatbox(msg, classes) {
+function addMsgToChatbox(msg, classes, id=null) {
   const chatbox = document.getElementById("chatbox");
   const msgElem = document.createElement("div");
   msgElem.textContent = msg;
   msgElem.className = classes;
+  if (id) msgElem.id = id;
   msgElem.style.whiteSpace = "pre-line";
   chatbox.appendChild(msgElem);
   chatbox.scrollTop = chatbox.scrollHeight;
@@ -52,12 +53,10 @@ function displayBotMsg(msg) {
 
 
 function showLoadingMsg() {
-  const loading = document.createElement("div");
-  loading.textContent = "Bot is thinking ...";
-  loading.className = "mt-auto mb-4 text-gray-300";
-  loading.id = "loading";
-  const chatbox = document.getElementById("chatbox");
-  chatbox.appendChild(loading);
+  msg = "Bot is thinking ...";
+  classes = "mt-auto mb-4 text-gray-300";
+  id = "loading";
+  addMsgToChatbox(msg, classes, id);
 }
 
 
